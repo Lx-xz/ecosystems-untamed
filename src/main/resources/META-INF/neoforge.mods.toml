@@ -1,0 +1,48 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MPL-2.0"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "Cobblemon Ecosystems: Untamed"
+authors = "luiz"
+description = '''
+Compat do Cobblemon Ecosystems com o Alex's Mobs (port do Raguto): os bichos selvagens do Alex's Mobs dão lugar a
+Pokémon, que herdam o que eles faziam (formigueiros, bananas, drops...).
+'''
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.21.2)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "cobblemon"
+type = "required"
+versionRange = "[1.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "cobblemon_ecosystems"
+type = "required"
+versionRange = "[1.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "alexsmobs"
+type = "required"
+versionRange = "[1.22,)"
+ordering = "AFTER"
+side = "BOTH"

@@ -1,0 +1,102 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+group = 'com.luiz.ecosystemsuntamed'
+base { archivesName = project.archives_base_name }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    maven { url = 'https://maven.impactdev.net/repository/development/' } // Cobblemon
+    maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }     // Kotlin for Forge (dependência do Cobblemon)
+    exclusiveContent {
+        forRepository { maven { url = 'https://api.modrinth.com/maven' } }
+        filter { includeGroup 'maven.modrinth' }
+    }
+}
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            // Nome do jogador no jogo de teste (servidor offline aceita qualquer nome).
+            programArguments.addAll('--username', 'Luiz')
+        }
+        server { server() }
+        // Sobe o jogo sem janela e sem EULA, só para conferir se os mods carregam.
+        gameTestServer {
+            type = 'gameTestServer'
+            gameDirectory = project.file('run-gametest')
+        }
+    }
+    mods {
+        "${mod_id}" { sourceSet sourceSets.main }
+    }
+}
+
+dependencies {
+    implementation("com.cobblemon:neoforge:${project.cobblemon_version}") { transitive = false }
+    compileOnly 'org.jetbrains.kotlin:kotlin-stdlib:2.0.0'
+    runtimeOnly 'thedarkcolour:kotlinforforge-neoforge:5.12.0'
+
+    // Alex's Mobs (port do Raguto) e Citadel. Ids exatos das versões no Modrinth:
+    // O Alex's Mobs também para compilar: o formigueiro (TileEntityLeafcutterAnthill) é usado no código.
+    compileOnly('maven.modrinth:alexs-mobs-1.21.1:KSgki4uc') { transitive = false }
+    // Para rodar: o port do Raguto (com a Citadel) ou o Alex's Mobs Continued (com a CodxLib). Os dois usam os mesmos
+    // ids e o mesmo formigueiro, então o mod funciona com qualquer um; alex_port no gradle.properties escolhe qual roda.
+    if (project.alex_port == 'continued') {
+        runtimeOnly 'maven.modrinth:alexs-mobs-continued:cNRWiA9B' // 2.2.3+1.21.1-neoforge
+        runtimeOnly 'maven.modrinth:codxlib:MMcDASmX'               // 1.6.1+neoforge-1.21.1
+    } else {
+        runtimeOnly 'maven.modrinth:alexs-mobs-1.21.1:KSgki4uc'   // 1.22.17
+        runtimeOnly 'maven.modrinth:citadel-1.21.1-port:mIylVpkN' // 2.7.6
+    }
+
+    // Mod base (Cobblemon Ecosystems): usa o jar compilado em ../base. Rode "gradlew build" lá antes.
+    runtimeOnly fileTree(dir: '../base/build/libs', include: 'cobblemon-ecosystems-*.jar')
+
+    // Jogar os três juntos: com all_mods=true o runClient daqui sobe também o Hollows (jar compilado em
+    // ../hollows_chasms_cavities) e o Alex's Caves. Rode "gradlew build" no Hollows antes.
+    if (project.all_mods.toBoolean()) {
+        runtimeOnly fileTree(dir: '../hollows_chasms_cavities/build/libs', include: 'cobblemon-ecosystems-hollows-*.jar')
+        if (project.alex_port == 'continued') {
+            runtimeOnly 'maven.modrinth:alexs-caves-continued:wSeCJMlI' // 1.1.2+neoforge-1.21.1
+        } else {
+            runtimeOnly 'maven.modrinth:alexs-caves-unofficial-port:pC1MYhqR' // 2.0.10
+        }
+    }
+
+    // Performance no runClient (não vão dentro do jar do mod). -Pperf_mods=false desliga.
+    if (project.perf_mods.toBoolean()) {
+        runtimeOnly 'maven.modrinth:sodium:uMOpc5uV'        // mc1.21.1-0.8.13-neoforge
+        runtimeOnly 'maven.modrinth:lithium:DDUrRVCA'       // mc1.21.1-0.15.4-neoforge
+        runtimeOnly 'maven.modrinth:ferrite-core:x7kQWVju'  // 7.0.3-neoforge
+        runtimeOnly 'maven.modrinth:modernfix:5HLHxQ2F'     // 5.27.24+mc1.21.1
+        runtimeOnly 'maven.modrinth:entityculling:8w8FfUPs' // 1.11.2
+    }
+
+    // Mods para testar no runClient (não vão dentro do jar do mod). Também vêm do Modrinth: -Ptest_mods=false desliga.
+    if (project.test_mods.toBoolean()) {
+        runtimeOnly 'maven.modrinth:effortless-building:YxnBXtLv' // 4.2+1.21.1: construir rápido (montar habitats)
+    }
+}
+
+processResources {
+    def props = [mod_id: project.mod_id, mod_version: project.mod_version]
+    inputs.properties props
+    filesMatching('META-INF/neoforge.mods.toml') { expand props }
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+// Apaga jars de versões antigas antes de gerar o novo.
+tasks.named('jar') {
+    doFirst { delete fileTree(destinationDirectory) { include "${project.archives_base_name}-*.jar" } }
+}
+
+// Repassa o teclado para o console do runServer (sem isso não dá para digitar comandos nele).
+tasks.matching { it.name == 'runServer' }.configureEach { standardInput = System.in }
