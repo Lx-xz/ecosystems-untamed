@@ -1,0 +1,32 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-caiman-totodile",
+      "pokemon": "totodile",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "5-18",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:caiman_egg",
+            "percentage": 5.0
+          }
+        ]
+      }
+    }
+  ]
+}

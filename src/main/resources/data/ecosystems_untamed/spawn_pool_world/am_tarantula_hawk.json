@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-tarantula_hawk-beedrill",
+      "pokemon": "beedrill",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "15-40",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#c:is_sandy"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_badlands"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:tarantula_hawk_wing_fragment",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

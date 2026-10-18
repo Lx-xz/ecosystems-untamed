@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-mimic_octopus-remoraid",
+      "pokemon": "remoraid",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "level": "10-25",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:deep_warm_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:ink_sac",
+            "percentage": 50.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-mimic_octopus-octillery",
+      "pokemon": "octillery",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "25-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:deep_warm_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:ink_sac",
+            "percentage": 50.0
+          }
+        ]
+      }
+    }
+  ]
+}

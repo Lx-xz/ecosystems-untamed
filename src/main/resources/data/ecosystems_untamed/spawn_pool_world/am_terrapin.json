@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-terrapin-squirtle",
+      "pokemon": "squirtle",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "level": "5-16",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold_overworld"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-terrapin-wartortle",
+      "pokemon": "wartortle",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "16-36",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold_overworld"
+        ]
+      }
+    }
+  ]
+}

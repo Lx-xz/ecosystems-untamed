@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-mudskipper-mudkip",
+      "pokemon": "mudkip",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "5-16",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:tropical_fish",
+            "percentage": 30.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-mudskipper-marshtomp",
+      "pokemon": "marshtomp",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "16-36",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:tropical_fish",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

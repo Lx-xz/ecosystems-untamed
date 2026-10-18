@@ -1,0 +1,105 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-rocky_roller-geodude",
+      "pokemon": "geodude",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-25",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "minecraft:dripstone_caves"
+        ],
+        "canSeeSky": false
+      },
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "alexsmobs:rocky_shell",
+            "percentage": 15.0
+          },
+          {
+            "item": "minecraft:tuff",
+            "percentage": 40.0
+          },
+          {
+            "item": "minecraft:pointed_dripstone",
+            "percentage": 40.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-rocky_roller-graveler",
+      "pokemon": "graveler",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "25-40",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "minecraft:dripstone_caves"
+        ],
+        "canSeeSky": false
+      },
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "alexsmobs:rocky_shell",
+            "percentage": 15.0
+          },
+          {
+            "item": "minecraft:tuff",
+            "percentage": 40.0
+          },
+          {
+            "item": "minecraft:pointed_dripstone",
+            "percentage": 40.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-rocky_roller-golem",
+      "pokemon": "golem",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "40-55",
+      "weight": 0.3,
+      "condition": {
+        "biomes": [
+          "minecraft:dripstone_caves"
+        ],
+        "canSeeSky": false
+      },
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "alexsmobs:rocky_shell",
+            "percentage": 15.0
+          },
+          {
+            "item": "minecraft:tuff",
+            "percentage": 40.0
+          },
+          {
+            "item": "minecraft:pointed_dripstone",
+            "percentage": 40.0
+          }
+        ]
+      }
+    }
+  ]
+}

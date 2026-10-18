@@ -1,0 +1,39 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-mantis_shrimp-krabby",
+      "pokemon": "krabby",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "level": "10-28",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#c:is_hot_overworld",
+          "minecraft:mangrove_swamp"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-mantis_shrimp-kingler",
+      "pokemon": "kingler",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "28-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#c:is_hot_overworld",
+          "minecraft:mangrove_swamp"
+        ]
+      }
+    }
+  ]
+}

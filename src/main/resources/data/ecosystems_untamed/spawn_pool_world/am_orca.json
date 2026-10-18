@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-orca-finizen",
+      "pokemon": "finizen",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "level": "15-38",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#c:is_cold_overworld"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-orca-palafin",
+      "pokemon": "palafin",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "38-50",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#c:is_cold_overworld"
+        ]
+      }
+    }
+  ]
+}

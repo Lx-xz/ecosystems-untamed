@@ -1,0 +1,54 @@
+{
+  "target": "cobblemon:durant",
+  "evolutions": [
+    {
+      "id": "durant_reginant",
+      "variant": "item_interact",
+      "result": "reginant",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "defendorder"
+      ],
+      "requiredContext": "alexsmobs:gongylidia",
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        },
+        {
+          "variant": "properties",
+          "target": "gender=female"
+        }
+      ]
+    }
+  ],
+  "behaviour": {
+    "herd": {
+      "maxSize": 9,
+      "toleratedLeaders": [
+        {
+          "pokemon": "durant",
+          "tier": 1
+        },
+        {
+          "pokemon": "reginant",
+          "tier": 2
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
+}

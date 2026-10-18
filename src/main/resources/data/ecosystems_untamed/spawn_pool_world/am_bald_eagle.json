@@ -1,0 +1,61 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-bald_eagle-rufflet",
+      "pokemon": "rufflet",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "15-30",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#c:is_coniferous",
+          "minecraft:grove",
+          "minecraft:windswept_forest"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "percentage": 60.0,
+            "quantityRange": "1-2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-bald_eagle-braviary",
+      "pokemon": "braviary",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "54-60",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#c:is_coniferous",
+          "minecraft:grove",
+          "minecraft:windswept_forest"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "percentage": 60.0,
+            "quantityRange": "1-2"
+          }
+        ]
+      }
+    }
+  ]
+}

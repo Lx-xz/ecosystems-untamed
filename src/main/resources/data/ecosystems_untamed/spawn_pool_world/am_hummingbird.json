@@ -1,0 +1,45 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-hummingbird-cutiefly",
+      "pokemon": "cutiefly",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "5-20",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "minecraft:flower_forest",
+          "minecraft:sunflower_plains",
+          "#minecraft:is_jungle",
+          "minecraft:meadow",
+          "minecraft:cherry_grove"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-hummingbird-ribombee",
+      "pokemon": "ribombee",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "25-40",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "minecraft:flower_forest",
+          "minecraft:sunflower_plains",
+          "#minecraft:is_jungle",
+          "minecraft:meadow",
+          "minecraft:cherry_grove"
+        ]
+      }
+    }
+  ]
+}

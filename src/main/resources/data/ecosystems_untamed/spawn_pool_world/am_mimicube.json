@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-mimicube-ditto",
+      "pokemon": "ditto",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-50",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_end"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:the_end"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:mimicream",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

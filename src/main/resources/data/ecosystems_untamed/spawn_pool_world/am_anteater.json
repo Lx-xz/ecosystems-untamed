@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-anteater-heatmor",
+      "pokemon": "heatmor",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-40",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      }
+    }
+  ]
+}

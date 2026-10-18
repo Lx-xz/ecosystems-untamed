@@ -1,0 +1,26 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-snow_leopard-absol",
+      "pokemon": "absol",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-45",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "#c:is_snowy",
+          "minecraft:snowy_slopes",
+          "minecraft:frozen_peaks",
+          "minecraft:jagged_peaks"
+        ]
+      }
+    }
+  ]
+}

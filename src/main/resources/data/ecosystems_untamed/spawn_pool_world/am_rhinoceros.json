@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-rhinoceros-rhyhorn",
+      "pokemon": "rhyhorn",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "15-42",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-rhinoceros-rhydon",
+      "pokemon": "rhydon",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "42-55",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      }
+    }
+  ]
+}

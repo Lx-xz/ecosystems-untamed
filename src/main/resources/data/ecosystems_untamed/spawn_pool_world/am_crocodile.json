@@ -1,0 +1,77 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-crocodile-croconaw",
+      "pokemon": "croconaw",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "18-30",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#c:is_swamp",
+          "minecraft:mangrove_swamp",
+          "#minecraft:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold"
+        ]
+      },
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "alexsmobs:crocodile_scute",
+            "percentage": 40.0
+          },
+          {
+            "item": "alexsmobs:crocodile_egg",
+            "percentage": 5.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-crocodile-feraligatr",
+      "pokemon": "feraligatr",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "30-50",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#c:is_swamp",
+          "minecraft:mangrove_swamp",
+          "#minecraft:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold"
+        ]
+      },
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "alexsmobs:crocodile_scute",
+            "percentage": 40.0
+          },
+          {
+            "item": "alexsmobs:crocodile_egg",
+            "percentage": 5.0
+          }
+        ]
+      }
+    }
+  ]
+}

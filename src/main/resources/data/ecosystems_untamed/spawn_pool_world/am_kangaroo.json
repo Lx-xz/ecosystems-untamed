@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-kangaroo-kangaskhan",
+      "pokemon": "kangaskhan",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-40",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_badlands",
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "alexsmobs:kangaroo_meat",
+            "percentage": 50.0
+          },
+          {
+            "item": "alexsmobs:kangaroo_hide",
+            "percentage": 40.0
+          }
+        ]
+      }
+    }
+  ]
+}

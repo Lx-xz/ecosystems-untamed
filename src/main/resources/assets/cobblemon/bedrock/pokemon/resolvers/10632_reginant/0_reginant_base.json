@@ -1,0 +1,32 @@
+{
+  "species": "cobblemon:reginant",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:durant",
+      "model": "ecosystems_untamed:reginant.geo",
+      "texture": "ecosystems_untamed:textures/pokemon/reginant/reginant.png",
+      "layers": [
+        {
+          "name": "wings",
+          "texture": "ecosystems_untamed:textures/pokemon/reginant/reginant_wings.png",
+          "translucent": true
+        }
+      ]
+    },
+    {
+      "aspects": [
+        "shiny"
+      ],
+      "texture": "ecosystems_untamed:textures/pokemon/reginant/reginant_shiny.png",
+      "layers": [
+        {
+          "name": "wings",
+          "texture": "ecosystems_untamed:textures/pokemon/reginant/reginant_shiny_wings.png",
+          "translucent": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-seagull-wingull",
+      "pokemon": "wingull",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "5-25",
+      "weight": 6.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_beach",
+          "minecraft:stony_shore"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "percentage": 50.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-seagull-pelipper",
+      "pokemon": "pelipper",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "25-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_beach",
+          "minecraft:stony_shore"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "percentage": 50.0
+          }
+        ]
+      }
+    }
+  ]
+}

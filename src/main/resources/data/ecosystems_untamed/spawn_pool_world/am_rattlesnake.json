@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-rattlesnake-seviper",
+      "pokemon": "seviper",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "15-40",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_badlands",
+          "#c:is_sandy"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:rattlesnake_rattle",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

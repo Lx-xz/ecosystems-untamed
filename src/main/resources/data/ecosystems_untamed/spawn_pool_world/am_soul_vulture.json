@@ -1,0 +1,63 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-soul_vulture-murkrow",
+      "pokemon": "murkrow",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "15-35",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "minecraft:soul_sand_valley"
+        ]
+      },
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "minecraft:bone",
+            "percentage": 40.0
+          },
+          {
+            "item": "alexsmobs:soul_heart",
+            "percentage": 5.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-soul_vulture-honchkrow",
+      "pokemon": "honchkrow",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "35-50",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "minecraft:soul_sand_valley"
+        ]
+      },
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "minecraft:bone",
+            "percentage": 40.0
+          },
+          {
+            "item": "alexsmobs:soul_heart",
+            "percentage": 5.0
+          }
+        ]
+      }
+    }
+  ]
+}

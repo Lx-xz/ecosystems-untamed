@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-maned_wolf-rockruff",
+      "pokemon": "rockruff",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "10-25",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-maned_wolf-lycanroc",
+      "pokemon": "lycanroc",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "25-45",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-rain_frog-croagunk",
+      "pokemon": "croagunk",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "10-37",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#c:is_sandy"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_badlands"
+        ]
+      }
+    }
+  ]
+}

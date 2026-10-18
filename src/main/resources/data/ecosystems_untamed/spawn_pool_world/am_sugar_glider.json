@@ -1,0 +1,39 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-sugar_glider-emolga",
+      "pokemon": "emolga",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "10-30",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "minecraft:birch_forest",
+          "minecraft:old_growth_birch_forest"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-sugar_glider-pachirisu",
+      "pokemon": "pachirisu",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "10-30",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "minecraft:birch_forest",
+          "minecraft:old_growth_birch_forest"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-banana_slug-shellos",
+      "pokemon": "shellos",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-25",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "minecraft:old_growth_pine_taiga",
+          "minecraft:old_growth_spruce_taiga",
+          "#c:is_rare"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana_slug_slime",
+            "percentage": 50.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-banana_slug-gastrodon",
+      "pokemon": "gastrodon",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "30-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "minecraft:old_growth_pine_taiga",
+          "minecraft:old_growth_spruce_taiga",
+          "#c:is_rare"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana_slug_slime",
+            "percentage": 50.0
+          }
+        ]
+      }
+    }
+  ]
+}

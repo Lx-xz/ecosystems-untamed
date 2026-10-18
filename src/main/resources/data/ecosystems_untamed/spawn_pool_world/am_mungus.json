@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-mungus-paras",
+      "pokemon": "paras",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-24",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#c:is_rare"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:mungal_spores",
+            "percentage": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-mungus-parasect",
+      "pokemon": "parasect",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "24-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#c:is_rare"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:mungal_spores",
+            "percentage": 20.0
+          }
+        ]
+      }
+    }
+  ]
+}

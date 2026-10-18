@@ -1,0 +1,57 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-comb_jelly-frillish",
+      "pokemon": "frillish",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "level": "10-40",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "minecraft:frozen_ocean",
+          "minecraft:deep_frozen_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:rainbow_jelly",
+            "percentage": 40.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-comb_jelly-jellicent",
+      "pokemon": "jellicent",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "40-55",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "minecraft:frozen_ocean",
+          "minecraft:deep_frozen_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:rainbow_jelly",
+            "percentage": 40.0
+          }
+        ]
+      }
+    }
+  ]
+}

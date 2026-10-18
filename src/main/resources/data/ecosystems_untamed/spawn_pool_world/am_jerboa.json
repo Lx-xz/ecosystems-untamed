@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-jerboa-sandshrew",
+      "pokemon": "sandshrew",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-22",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#c:is_sandy"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_badlands"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-jerboa-sandslash",
+      "pokemon": "sandslash",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "22-40",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#c:is_sandy"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_badlands"
+        ]
+      }
+    }
+  ]
+}

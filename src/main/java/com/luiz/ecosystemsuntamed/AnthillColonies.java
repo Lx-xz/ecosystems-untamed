@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
@@ -15,12 +16,18 @@ import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.memory.WalkTarget;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
@@ -28,6 +35,7 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.ChunkEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
@@ -36,9 +44,15 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * <ul>
  *   <li>Quando o formigueiro carrega (ou tenta soltar uma formiga, que o mod base bloqueia), as formigas de dentro
  *       somem e nascem de 2 a 4 Durant que moram ali.</li>
- *   <li>De dia, cada Durant vai até as folhas das árvores por perto, "corta" um pedaço e leva para o formigueiro: o
- *       fungo da câmara cresce, como fazia com as formigas (o jogador continua colhendo o gongylidia).</li>
- *   <li>Eles não se afastam muito de casa. Capturados, viram Durant normais.</li>
+ *   <li>De dia, cada Durant vai até as folhas das árvores por perto, corta um pedaço e leva para o formigueiro nas
+ *       mandíbulas (a folha aparece: é o item na mão dele, que o Cobblemon desenha no ponto das mandíbulas). Ele entra
+ *       no formigueiro com ela, o fungo da câmara cresce, como fazia com as formigas (o jogador continua colhendo o
+ *       gongylidia), e ele descansa lá dentro antes de sair de novo.</li>
+ *   <li>À noite todos voltam e ficam dentro; saem de manhã. Quebrou o formigueiro, saem todos na hora.</li>
+ *   <li>Lá dentro, o Durant fica guardado no formigueiro (como as abelhas na colmeia). Eles não se afastam muito de
+ *       casa. Capturados, viram Durant normais.</li>
+ *   <li>Cada formigueiro tem uma rainha, a Reginant (espécie nova: tools/reginant.py), que mora lá dentro e só sai se
+ *       ele for quebrado, como a rainha das formigas do Alex's Mobs.</li>
  * </ul>
  */
 @EventBusSubscriber(modid = EcosystemsUntamed.MOD_ID)
@@ -48,8 +62,12 @@ public final class AnthillColonies {
     private static final String CARRYING_KEY = EcosystemsUntamed.MOD_ID + ":carrying_leaf";
     private static final String LEAF_KEY = EcosystemsUntamed.MOD_ID + ":leaf_target";
     private static final String NEXT_TRIP_KEY = EcosystemsUntamed.MOD_ID + ":next_trip";
+    /** No formigueiro: os Durant guardados lá dentro (a entidade inteira e a hora de sair). */
+    private static final String INSIDE_KEY = EcosystemsUntamed.MOD_ID + ":inside";
     /** No formigueiro: a colônia já nasceu. */
     private static final String COLONY_KEY = EcosystemsUntamed.MOD_ID + ":colony";
+    /** No formigueiro: a rainha já nasceu (fica lá dentro). */
+    private static final String QUEEN_KEY = EcosystemsUntamed.MOD_ID + ":queen";
     private static final int MIN_COLONY = 2, MAX_COLONY = 4;
     private static final int LEAF_RADIUS = 10, HOME_RADIUS = 20;
     /** Descanso entre uma viagem e outra: 30 a 90 s. */
@@ -58,6 +76,8 @@ public final class AnthillColonies {
     private record Pending(ServerLevel level, BlockPos pos) {}
     private static final List<Pending> pending = new ArrayList<>();
     private static final Set<PokemonEntity> workers = new HashSet<>();
+    /** Formigueiros com Durant guardados dentro (para soltar na hora certa). */
+    private static final Set<Pending> occupied = new HashSet<>();
     private static Field antsField;
     private static int tick;
 
@@ -69,8 +89,11 @@ public final class AnthillColonies {
     public static void onChunkLoad(ChunkEvent.Load event) {
         if (!(event.getLevel() instanceof ServerLevel level) || !(event.getChunk() instanceof LevelChunk chunk)) return;
         for (BlockEntity be : chunk.getBlockEntities().values()) {
-            if (be instanceof TileEntityLeafcutterAnthill && !be.getPersistentData().getBoolean(COLONY_KEY)) {
-                pending.add(new Pending(level, be.getBlockPos()));
+            if (!(be instanceof TileEntityLeafcutterAnthill)) continue;
+            CompoundTag data = be.getPersistentData();
+            if (!data.getBoolean(COLONY_KEY) || !data.getBoolean(QUEEN_KEY)) pending.add(new Pending(level, be.getBlockPos()));
+            if (!be.getPersistentData().getList(INSIDE_KEY, Tag.TAG_COMPOUND).isEmpty()) {
+                occupied.add(new Pending(level, be.getBlockPos()));
             }
         }
     }
@@ -95,22 +118,45 @@ public final class AnthillColonies {
     public static void onServerTick(ServerTickEvent.Post event) {
         for (Pending p : List.copyOf(pending)) createColony(p.level(), p.pos());
         pending.clear();
-        if (++tick % 40 == 0) workAll();
+        if (++tick % 40 == 0) {
+            workAll();
+            releaseAll();
+        }
+    }
+
+    @SubscribeEvent
+    public static void onBreak(BlockEvent.BreakEvent event) {
+        // Quebrou o formigueiro: os Durant de dentro saem na hora.
+        if (event.getLevel() instanceof ServerLevel level
+                && level.getBlockEntity(event.getPos()) instanceof TileEntityLeafcutterAnthill anthill) {
+            release(level, anthill, true);
+        }
     }
 
     private static void createColony(ServerLevel level, BlockPos pos) {
         if (!(level.getBlockEntity(pos) instanceof TileEntityLeafcutterAnthill anthill)) return;
         clearAnts(anthill);
-        if (anthill.getPersistentData().getBoolean(COLONY_KEY)) return;
-        anthill.getPersistentData().putBoolean(COLONY_KEY, true);
-        anthill.setChanged();
-        int count = MIN_COLONY + level.random.nextInt(MAX_COLONY - MIN_COLONY + 1);
-        for (int i = 0; i < count; i++) {
-            PokemonEntity durant = PokemonProperties.Companion.parse("durant level=" + (10 + level.random.nextInt(16))).createEntity(level);
-            durant.moveTo(pos.getX() + 0.5 + level.random.nextInt(5) - 2, pos.getY() + 1, pos.getZ() + 0.5 + level.random.nextInt(5) - 2,
-                    level.random.nextFloat() * 360f, 0f);
-            durant.getPersistentData().putLong(HOME_KEY, pos.asLong());
-            if (level.addFreshEntity(durant)) workers.add(durant);
+        CompoundTag data = anthill.getPersistentData();
+        if (!data.getBoolean(COLONY_KEY)) {
+            data.putBoolean(COLONY_KEY, true);
+            anthill.setChanged();
+            int count = MIN_COLONY + level.random.nextInt(MAX_COLONY - MIN_COLONY + 1);
+            for (int i = 0; i < count; i++) {
+                PokemonEntity durant = PokemonProperties.Companion.parse("durant level=" + (10 + level.random.nextInt(16))).createEntity(level);
+                durant.moveTo(pos.getX() + 0.5 + level.random.nextInt(5) - 2, pos.getY() + 1, pos.getZ() + 0.5 + level.random.nextInt(5) - 2,
+                        level.random.nextFloat() * 360f, 0f);
+                durant.getPersistentData().putLong(HOME_KEY, pos.asLong());
+                if (level.addFreshEntity(durant)) workers.add(durant);
+            }
+        }
+        if (!data.getBoolean(QUEEN_KEY)) {
+            // A rainha (Reginant, tools/reginant.py) mora lá dentro e só sai se o formigueiro for quebrado. As
+            // colônias de antes dela também ganham a sua.
+            data.putBoolean(QUEEN_KEY, true);
+            PokemonEntity queen = PokemonProperties.Companion.parse("reginant level=" + (40 + level.random.nextInt(11))).createEntity(level);
+            queen.moveTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0f, 0f);
+            queen.getPersistentData().putLong(HOME_KEY, pos.asLong());
+            enter(level, anthill, queen, Long.MAX_VALUE);
         }
     }
 
@@ -154,18 +200,26 @@ public final class AnthillColonies {
             if (toHome > 2.5) {
                 walkTo(durant, home, 0.5f);
             } else {
+                // Entrou com a folha: o fungo cresce e ele descansa lá dentro.
                 anthill.growFungus();
                 data.putBoolean(CARRYING_KEY, false);
-                data.putLong(NEXT_TRIP_KEY, level.getGameTime() + REST_MIN + level.random.nextInt(REST_EXTRA));
+                durant.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
                 level.sendParticles(ParticleTypes.HAPPY_VILLAGER, home.getX() + 0.5, home.getY() + 1.1, home.getZ() + 0.5, 4, 0.3, 0.1, 0.3, 0);
+                enter(level, anthill, durant, level.getGameTime() + REST_MIN + level.random.nextInt(REST_EXTRA));
             }
+            return;
+        }
+        if (!level.isDay()) {
+            // Noite: volta e dorme no formigueiro (sai de manhã).
+            if (toHome > 2.5) walkTo(durant, home, 0.5f);
+            else enter(level, anthill, durant, 0);
             return;
         }
         if (toHome > HOME_RADIUS) {
             walkTo(durant, home, 0.5f);
             return;
         }
-        if (!level.isDay() || level.getGameTime() < data.getLong(NEXT_TRIP_KEY)) return;
+        if (level.getGameTime() < data.getLong(NEXT_TRIP_KEY)) return;
 
         BlockPos leaf = data.contains(LEAF_KEY) ? BlockPos.of(data.getLong(LEAF_KEY)) : findLeaf(level, home, durant);
         if (leaf == null || !level.getBlockState(leaf).is(BlockTags.LEAVES)) {
@@ -178,12 +232,67 @@ public final class AnthillColonies {
             walkTo(durant, leaf, 0.5f);
             return;
         }
-        // Cortou um pedaço da folha (a árvore fica inteira) e leva para casa.
+        // Cortou um pedaço da folha (a árvore fica inteira) e leva para casa nas mandíbulas.
         BlockState state = level.getBlockState(leaf);
         level.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, state), leaf.getX() + 0.5, leaf.getY() + 0.5, leaf.getZ() + 0.5,
                 12, 0.3, 0.3, 0.3, 0.05);
         data.remove(LEAF_KEY);
         data.putBoolean(CARRYING_KEY, true);
+        durant.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(state.getBlock().asItem()));
+        durant.setDropChance(EquipmentSlot.MAINHAND, 0f);   // a folha não cai se ele for derrotado
+    }
+
+    // ----- Dentro do formigueiro -----
+
+    /** O Durant entra: a entidade sai do mundo e fica guardada no formigueiro até a hora de sair (0: de manhã). */
+    private static void enter(ServerLevel level, TileEntityLeafcutterAnthill anthill, PokemonEntity durant, long exitAt) {
+        CompoundTag saved = new CompoundTag();
+        if (!durant.save(saved)) return;
+        ListTag inside = anthill.getPersistentData().getList(INSIDE_KEY, Tag.TAG_COMPOUND);
+        CompoundTag entry = new CompoundTag();
+        entry.put("entity", saved);
+        entry.putLong("exit", exitAt);
+        inside.add(entry);
+        anthill.getPersistentData().put(INSIDE_KEY, inside);
+        anthill.setChanged();
+        workers.remove(durant);
+        durant.discard();
+        occupied.add(new Pending(level, anthill.getBlockPos()));
+    }
+
+    private static void releaseAll() {
+        occupied.removeIf(p -> {
+            if (!p.level().isLoaded(p.pos())) return false;
+            if (!(p.level().getBlockEntity(p.pos()) instanceof TileEntityLeafcutterAnthill anthill)) return true;
+            release(p.level(), anthill, false);
+            return anthill.getPersistentData().getList(INSIDE_KEY, Tag.TAG_COMPOUND).isEmpty();
+        });
+    }
+
+    /** Solta quem já pode sair (de dia, passada a hora dele), ou todos. */
+    private static void release(ServerLevel level, TileEntityLeafcutterAnthill anthill, boolean all) {
+        ListTag inside = anthill.getPersistentData().getList(INSIDE_KEY, Tag.TAG_COMPOUND);
+        if (inside.isEmpty()) return;
+        BlockPos pos = anthill.getBlockPos();
+        ListTag stay = new ListTag();
+        for (int i = 0; i < inside.size(); i++) {
+            CompoundTag entry = inside.getCompound(i);
+            if (!all && !(level.isDay() && level.getGameTime() >= entry.getLong("exit"))) {
+                stay.add(entry);
+                continue;
+            }
+            Entity entity = EntityType.loadEntityRecursive(entry.getCompound("entity"), level, e -> {
+                e.setUUID(UUID.randomUUID());
+                e.moveTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, level.random.nextFloat() * 360f, 0f);
+                return e;
+            });
+            if (entity instanceof PokemonEntity durant) {
+                durant.getPersistentData().putLong(NEXT_TRIP_KEY, level.getGameTime() + level.random.nextInt(200));
+                if (level.addFreshEntity(durant)) workers.add(durant);
+            }
+        }
+        anthill.getPersistentData().put(INSIDE_KEY, stay);
+        anthill.setChanged();
     }
 
     /** Uma folha de árvore perto do formigueiro (sorteando posições, sem varrer tudo). */

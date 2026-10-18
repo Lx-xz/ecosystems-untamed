@@ -1,0 +1,71 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-flying_fish-mantyke",
+      "pokemon": "mantyke",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "level": "10-30",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold_overworld",
+          "#c:is_hot_overworld",
+          "minecraft:deep_ocean",
+          "minecraft:deep_lukewarm_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:flying_fish",
+            "percentage": 40.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-flying_fish-mantine",
+      "pokemon": "mantine",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "30-45",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold_overworld",
+          "#c:is_hot_overworld",
+          "minecraft:deep_ocean",
+          "minecraft:deep_lukewarm_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:flying_fish",
+            "percentage": 40.0
+          }
+        ]
+      }
+    }
+  ]
+}

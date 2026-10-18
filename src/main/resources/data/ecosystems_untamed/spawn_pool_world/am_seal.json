@@ -1,0 +1,57 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-seal-seel",
+      "pokemon": "seel",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-34",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_beach",
+          "#c:is_cold_overworld",
+          "minecraft:stony_shore"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-seal-spheal",
+      "pokemon": "spheal",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-32",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_beach",
+          "#c:is_cold_overworld",
+          "minecraft:stony_shore"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-seal-dewgong",
+      "pokemon": "dewgong",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "34-50",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_beach",
+          "#c:is_cold_overworld",
+          "minecraft:stony_shore"
+        ]
+      }
+    }
+  ]
+}

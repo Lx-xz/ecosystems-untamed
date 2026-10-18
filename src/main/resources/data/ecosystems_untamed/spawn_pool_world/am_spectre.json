@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-spectre-drifloon",
+      "pokemon": "drifloon",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "20-28",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_end"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:the_end"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-spectre-drifblim",
+      "pokemon": "drifblim",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "28-50",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_end"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:the_end"
+        ]
+      }
+    }
+  ]
+}

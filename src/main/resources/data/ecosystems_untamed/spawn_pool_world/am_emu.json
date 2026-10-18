@@ -1,0 +1,73 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-emu-doduo",
+      "pokemon": "doduo",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-31",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_badlands",
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "alexsmobs:emu_feather",
+            "percentage": 40.0
+          },
+          {
+            "item": "minecraft:feather",
+            "percentage": 40.0
+          },
+          {
+            "item": "alexsmobs:emu_egg",
+            "percentage": 5.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-emu-dodrio",
+      "pokemon": "dodrio",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "31-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_badlands",
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 3,
+        "entries": [
+          {
+            "item": "alexsmobs:emu_feather",
+            "percentage": 40.0
+          },
+          {
+            "item": "minecraft:feather",
+            "percentage": 40.0
+          },
+          {
+            "item": "alexsmobs:emu_egg",
+            "percentage": 5.0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-elephant-phanpy",
+      "pokemon": "phanpy",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-25",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:acacia_blossom",
+            "percentage": 15.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-elephant-donphan",
+      "pokemon": "donphan",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "25-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:acacia_blossom",
+            "percentage": 15.0
+          }
+        ]
+      }
+    }
+  ]
+}

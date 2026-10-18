@@ -1,0 +1,57 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-anaconda-ekans",
+      "pokemon": "ekans",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-20",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#c:is_swamp",
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:shed_snake_skin",
+            "percentage": 30.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-anaconda-arbok",
+      "pokemon": "arbok",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "22-40",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#c:is_swamp",
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:shed_snake_skin",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

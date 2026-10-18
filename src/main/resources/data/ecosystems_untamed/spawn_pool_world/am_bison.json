@@ -1,0 +1,44 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-bison-bouffalant",
+      "pokemon": "bouffalant",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-40",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#c:is_plains",
+          "minecraft:meadow"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna",
+          "#c:is_hot_overworld"
+        ]
+      },
+      "drops": {
+        "amount": 2,
+        "entries": [
+          {
+            "item": "minecraft:beef",
+            "percentage": 60.0,
+            "quantityRange": "1-2"
+          },
+          {
+            "item": "alexsmobs:bison_fur",
+            "percentage": 50.0
+          }
+        ]
+      }
+    }
+  ]
+}

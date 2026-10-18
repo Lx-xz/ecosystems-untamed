@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-platypus-psyduck",
+      "pokemon": "psyduck",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "level": "8-25",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold_overworld"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-platypus-golduck",
+      "pokemon": "golduck",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "33-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_cold_overworld"
+        ]
+      }
+    }
+  ]
+}

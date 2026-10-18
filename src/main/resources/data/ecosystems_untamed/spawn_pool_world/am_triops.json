@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-triops-kabuto",
+      "pokemon": "kabuto",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "level": "10-30",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#c:is_sandy"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_badlands"
+        ]
+      }
+    }
+  ]
+}

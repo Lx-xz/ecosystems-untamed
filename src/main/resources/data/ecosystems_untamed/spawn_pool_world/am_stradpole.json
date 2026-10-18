@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-stradpole-slugma",
+      "pokemon": "slugma",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "15-38",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "minecraft:basalt_deltas"
+        ]
+      }
+    }
+  ]
+}

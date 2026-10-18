@@ -1,0 +1,32 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-frilled_shark-relicanth",
+      "pokemon": "relicanth",
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "rare",
+      "level": "20-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_deep_ocean"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:serrated_shark_tooth",
+            "percentage": 10.0
+          }
+        ]
+      }
+    }
+  ]
+}

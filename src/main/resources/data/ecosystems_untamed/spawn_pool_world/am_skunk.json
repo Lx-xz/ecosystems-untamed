@@ -1,0 +1,71 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-skunk-stunky",
+      "pokemon": "stunky",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-25",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest",
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna",
+          "#c:is_cold_overworld",
+          "minecraft:sparse_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:skunk_spray",
+            "percentage": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-skunk-skuntank",
+      "pokemon": "skuntank",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "34-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest",
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna",
+          "#c:is_cold_overworld",
+          "minecraft:sparse_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:skunk_spray",
+            "percentage": 20.0
+          }
+        ]
+      }
+    }
+  ]
+}

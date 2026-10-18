@@ -1,0 +1,51 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-tasmanian_devil-poochyena",
+      "pokemon": "poochyena",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-20",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna",
+          "#c:is_cold_overworld",
+          "minecraft:sparse_jungle"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-tasmanian_devil-mightyena",
+      "pokemon": "mightyena",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "18-35",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna",
+          "#c:is_cold_overworld",
+          "minecraft:sparse_jungle"
+        ]
+      }
+    }
+  ]
+}

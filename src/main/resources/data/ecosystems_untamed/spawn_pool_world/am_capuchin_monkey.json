@@ -1,0 +1,67 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-capuchin_monkey-aipom",
+      "pokemon": "aipom",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-25",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle",
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana",
+            "percentage": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-capuchin_monkey-ambipom",
+      "pokemon": "ambipom",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "25-40",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle",
+          "minecraft:mangrove_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana",
+            "percentage": 20.0
+          }
+        ]
+      }
+    }
+  ]
+}

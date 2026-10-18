@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-froststalker-sneasel",
+      "pokemon": "sneasel",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "15-40",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "minecraft:ice_spikes",
+          "minecraft:frozen_peaks"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:froststalker_horn",
+            "percentage": 20.0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-gorilla-slakoth",
+      "pokemon": "slakoth",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-18",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana",
+            "percentage": 30.0,
+            "quantityRange": "1-2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-gorilla-vigoroth",
+      "pokemon": "vigoroth",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "18-36",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana",
+            "percentage": 30.0,
+            "quantityRange": "1-2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-gorilla-slaking",
+      "pokemon": "slaking",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "36-50",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:banana",
+            "percentage": 30.0,
+            "quantityRange": "1-2"
+          }
+        ]
+      }
+    }
+  ]
+}

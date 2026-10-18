@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-gelada_monkey-mankey",
+      "pokemon": "mankey",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "8-28",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#c:is_plateau"
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-gelada_monkey-primeape",
+      "pokemon": "primeape",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "28-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#c:is_plateau"
+        ]
+      }
+    }
+  ]
+}

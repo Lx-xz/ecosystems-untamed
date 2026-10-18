@@ -1,0 +1,102 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-cave_centipede-venipede",
+      "pokemon": "venipede",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-22",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_overworld"
+        ],
+        "canSeeSky": false
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_ocean",
+          "#c:is_mushroom",
+          "minecraft:deep_dark"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:centipede_leg",
+            "percentage": 30.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-cave_centipede-whirlipede",
+      "pokemon": "whirlipede",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "22-30",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_overworld"
+        ],
+        "canSeeSky": false
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_ocean",
+          "#c:is_mushroom",
+          "minecraft:deep_dark"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:centipede_leg",
+            "percentage": 30.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-cave_centipede-scolipede",
+      "pokemon": "scolipede",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "30-45",
+      "weight": 0.5,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_overworld"
+        ],
+        "canSeeSky": false
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_ocean",
+          "#c:is_mushroom",
+          "minecraft:deep_dark"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:centipede_leg",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

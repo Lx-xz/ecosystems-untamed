@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-komodo_dragon-salandit",
+      "pokemon": "salandit",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "10-33",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_dense_overworld"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:komodo_spit",
+            "percentage": 20.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-komodo_dragon-salazzle",
+      "pokemon": "salazzle",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "33-45",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#c:is_dense_overworld"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:komodo_spit",
+            "percentage": 20.0
+          }
+        ]
+      }
+    }
+  ]
+}

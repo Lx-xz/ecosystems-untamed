@@ -1,0 +1,32 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-dropbear-komala",
+      "pokemon": "komala",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-45",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "minecraft:nether_wastes"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:dropbear_claw",
+            "percentage": 30.0
+          }
+        ]
+      }
+    }
+  ]
+}

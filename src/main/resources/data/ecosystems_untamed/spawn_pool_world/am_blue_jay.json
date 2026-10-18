@@ -1,0 +1,69 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-blue_jay-taillow",
+      "pokemon": "taillow",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "5-20",
+      "weight": 6.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest",
+          "#minecraft:is_taiga",
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:sparse_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "percentage": 50.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-blue_jay-swellow",
+      "pokemon": "swellow",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "level": "22-40",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest",
+          "#minecraft:is_taiga",
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "minecraft:sparse_jungle"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "minecraft:feather",
+            "percentage": 50.0
+          }
+        ]
+      }
+    }
+  ]
+}

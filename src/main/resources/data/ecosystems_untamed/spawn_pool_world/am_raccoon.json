@@ -1,0 +1,71 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-raccoon-zigzagoon",
+      "pokemon": "zigzagoon",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "5-20",
+      "weight": 6.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest",
+          "#c:is_plains",
+          "#minecraft:is_taiga",
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:raccoon_tail",
+            "percentage": 25.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-raccoon-linoone",
+      "pokemon": "linoone",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "20-35",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_forest",
+          "#c:is_plains",
+          "#minecraft:is_taiga",
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#minecraft:is_savanna"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:raccoon_tail",
+            "percentage": 25.0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "implemented": true,
+  "nationalPokedexNumber": 10632,
+  "name": "Reginant",
+  "primaryType": "bug",
+  "secondaryType": "steel",
+  "maleRatio": 0,
+  "height": 8,
+  "weight": 900,
+  "pokedex": [
+    "cobblemon.species.reginant.desc"
+  ],
+  "labels": [
+    "custom",
+    "ecosystems_untamed"
+  ],
+  "aspects": [],
+  "abilities": [
+    "queenlymajesty",
+    "swarm",
+    "h:steelworker"
+  ],
+  "eggGroups": [
+    "bug"
+  ],
+  "baseStats": {
+    "hp": 95,
+    "attack": 115,
+    "defence": 140,
+    "special_attack": 55,
+    "special_defence": 105,
+    "speed": 50
+  },
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 205,
+  "experienceGroup": "medium_fast",
+  "catchRate": 45,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 1.4,
+    "height": 1.3,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:raw_iron",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:raw_gold",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "alexsmobs:gongylidia",
+        "percentage": 25
+      }
+    ]
+  },
+  "preEvolution": "durant",
+  "evolutions": [],
+  "behaviour": {
+    "herd": {
+      "maxSize": 9,
+      "toleratedLeaders": [
+        {
+          "pokemon": "reginant",
+          "tier": 2
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  },
+  "moves": [
+    "1:attackorder",
+    "1:defendorder",
+    "1:healorder",
+    "1:sandattack",
+    "1:furycutter",
+    "1:visegrip",
+    "1:metalclaw",
+    "12:beatup",
+    "16:bugbite",
+    "20:bite",
+    "24:irondefense",
+    "28:dig",
+    "32:xscissor",
+    "35:defendorder",
+    "38:instruct",
+    "42:ironhead",
+    "46:attackorder",
+    "50:healorder",
+    "54:crunch",
+    "58:victorydance",
+    "64:firstimpression",
+    "egg:feintattack",
+    "egg:firstimpression",
+    "egg:flail",
+    "egg:infestation",
+    "egg:metalburst",
+    "egg:strugglebug",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:batonpass",
+    "tm:beatup",
+    "tm:bugbite",
+    "tm:crunch",
+    "tm:cut",
+    "tm:dig",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:furycutter",
+    "tm:gigaimpact",
+    "tm:helpinghand",
+    "tm:honeclaws",
+    "tm:infestation",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:metalclaw",
+    "tm:metalsound",
+    "tm:protect",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:rockclimb",
+    "tm:rockpolish",
+    "tm:rockslide",
+    "tm:rocksmash",
+    "tm:rocktomb",
+    "tm:sandstorm",
+    "tm:screech",
+    "tm:shadowclaw",
+    "tm:skittersmack",
+    "tm:sleeptalk",
+    "tm:steelbeam",
+    "tm:stompingtantrum",
+    "tm:stoneedge",
+    "tm:strength",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:terablast",
+    "tm:thunderfang",
+    "tm:thunderwave",
+    "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:bugbite",
+    "tutor:endeavor",
+    "tutor:energyball",
+    "tutor:flashcannon",
+    "tutor:furycutter",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:shadowclaw",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:steelbeam",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:superpower",
+    "tutor:thunderfang",
+    "tutor:xscissor",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
+  ]
+}

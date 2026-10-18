@@ -1,0 +1,57 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "alexsmobs"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ecosystems_untamed-roadrunner-fletchling",
+      "pokemon": "fletchling",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "level": "5-17",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_badlands",
+          "#c:is_sandy"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:roadrunner_feather",
+            "percentage": 40.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecosystems_untamed-roadrunner-fletchinder",
+      "pokemon": "fletchinder",
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "level": "17-35",
+      "weight": 1.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_badlands",
+          "#c:is_sandy"
+        ]
+      },
+      "drops": {
+        "amount": 1,
+        "entries": [
+          {
+            "item": "alexsmobs:roadrunner_feather",
+            "percentage": 40.0
+          }
+        ]
+      }
+    }
+  ]
+}
